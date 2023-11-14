@@ -5,69 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Links</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f7f7f7;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .link-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .link-list li {
-      margin-bottom: 10px;
-    }
-
-    .link-list a {
-      text-decoration: none;
-      color: #333;
-      background-color: #fff;
-      border: 1px solid #ddd;
-      display: block;
-      padding: 10px;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      transition: transform 0.2s ease-in-out;
-    }
-
-    .link-list a:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
-    }
-
-    .link-list a:active {
-      transform: translateY(1px);
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    .material-icons {
-      vertical-align: middle;
-      margin-right: 8px;
-    }
-
-    #qrcode {
-      max-width: 400px;
-      margin: 20px auto;
-    }
-
-    @media (max-width: 600px) {
-      .link-list a {
-        width: 100%;
-        box-sizing: border-box;
-      }
-    }
-  </style>
 </head>
 <body>
-  <div id="qrcode"></div>
-  <script src="main.js"></script>
   <script src="APIDescription.js"></script>
+  <script src="main.js"></script>
   <script src="QRCodeGenerator.js"></script>
+
+  <div id="qrcode"></div>
+
+  <script>
+    window.onload = function() {
+      createQRCode();
+    };
+  </script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-function createAPIDescription() {
+function loadAPIDescription() {
   let apiDescription = document.createElement('div');
   apiDescription.innerHTML = `
     <h2>API Description</h2>

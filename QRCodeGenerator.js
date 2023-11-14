@@ -1,8 +1,10 @@
 function createQRCode() {
   let qrcodeContainer = document.getElementById('qrcode');
+  let size = Math.min(window.innerWidth, 300);
+
   new QRCode(qrcodeContainer, {
     text: window.location.href,
-    width: window.innerWidth > 400 ? 400 : window.innerWidth,
-    height: window.innerWidth > 400 ? 400 : window.innerWidth,
+    width: size,
+    height: size
   });
 }
