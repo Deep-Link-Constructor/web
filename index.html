@@ -16,8 +16,22 @@
   <div id="qrcode"></div>
 
   <script>
-    window.onload = function() {
+     window.onload = function() {
       createQRCode();
+      if ('Accelerometer' in window) {
+        const accelerometer = new Accelerometer({frequency: 60});
+
+        accelerometer.addEventListener('reading', e => {
+          const r = Math.abs(accelerometer.x) * 10;
+          const g = Math.abs(accelerometer.y) * 10;
+          const b = Math.abs(accelerometer.z) * 10;
+          document.body.style.backgroundColor = `rgb(${r % 255}, ${g % 255}, ${b % 255})`;
+        });
+
+        accelerometer.start();
+      } else {
+        console.log('Accelerometer not supported');
+      }
     };
   </script>
 </body>
